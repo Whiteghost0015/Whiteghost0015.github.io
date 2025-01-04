@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Set email headers
-    $headers = "From: noreply@example.com\r\n"; // Replace with your desired sender email
+    $headers = "From: noreply@github.com\r\n"; // Replace with your desired sender email
     $headers .= "Reply-To: noreply@example.com\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
